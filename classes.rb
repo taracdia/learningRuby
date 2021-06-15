@@ -1,12 +1,19 @@
-class Book
-  attr_accessor :title, :author, :pages
-  def initialize(title, author, pages)
-    @title = title
-    @author = author
-    @pages = pages
+class Student
+  attr_accessor :name, :major, :gpa
+  def initialize(name, major, gpa)
+    @name = name
+    @major = major
+    @gpa = gpa
+  end
+  def has_honors
+    if @gpa >= 3.5
+      return true
+    end
+    return false
   end
 end
 
-book1 = Book.new("title", "author", 200)
+student1 = Student.new("Jim", "Business", 2.5)
+student2 = Student.new("Pam", "Art", 3.6)
 
-puts book1
+puts student1.has_honors
